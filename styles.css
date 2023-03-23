@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.root {
+  display: flex; }
+
+.content-box {
+  padding: 3em;
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 3em; }
+  .content-box h2 {
+    text-transform: uppercase;
+    color: #337685;
+    display: flex;
+    gap: 3px;
+    align-items: center; }
+  .content-box .topic h4 {
+    margin: 0; }
+  .content-box .topic .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .content-box .topic .topic__list .topic__list__header {
+    font-size: larger;
+    color: #408699; }
+  .content-box .topic .skills {
+    display: flex;
+    gap: 1em;
+    flex-direction: column; }
+    .content-box .topic .skills .skills__row {
+      display: flex;
+      gap: 1em; }
+    .content-box .topic .skills .skills__name {
+      font-weight: bold;
+      min-width: 10em; }
+    .content-box .topic .skills .skills__status {
+      max-height: 1em;
+      min-height: 1em;
+      width: 100%;
+      background-color: #b1bcbe; }
+    .content-box .topic .skills .skills__bar {
+      max-height: 1em;
+      min-height: 1em;
+      background-color: #408699; }
+
+.text-decor_blend {
+  color: #A5E7FA; }
+
+.text-decor_gray {
+  color: gray; }
+
+.sidepanel {
+  background: #4DA7BE;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 0; }
+  .sidepanel .profile {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: #408699;
+    padding: 1em 0; }
+    .sidepanel .profile .profile__image {
+      border-radius: 50%;
+      max-width: 100%;
+      height: 6em; }
+    .sidepanel .profile .profile__name {
+      font-size: 2em;
+      font-weight: bold; }
+    .sidepanel .profile .profile__position {
+      font-size: 1em;
+      color: #95C9D7; }
+  .sidepanel .sidepanel__etc-info {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em; }
+  .sidepanel .list, .sidepanel .edu-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; }
+    .sidepanel .list .list__header, .sidepanel .edu-sublist .list__header {
+      font-weight: bold; }
+    .sidepanel .list .list__el, .sidepanel .edu-sublist .list__el {
+      font-size: 0.8em; }
+    .sidepanel .list .list__el_inline, .sidepanel .edu-sublist .list__el_inline {
+      display: flex;
+      align-items: center;
+      gap: 5px; }
+  .sidepanel .edu-sublist {
+    gap: 0; }
+    .sidepanel .edu-sublist .edu-sublist__header {
+      font-weight: bold; }
+    .sidepanel .edu-sublist .edu-sublist__el {
+      font-size: 0.8em; }
+
+/*# sourceMappingURL=styles.css.map */

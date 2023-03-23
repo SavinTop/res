@@ -1,0 +1,157 @@
+$sidepanel-color: #4DA7BE;
+$sidepanel-font-color: #FFFFFF;
+$sidepanel-profile-color: #408699;
+$profile-font-color: #95C9D7;
+$text-blend-color:#A5E7FA; 
+$content-header-color:#337685;
+$text-gray-color: gray;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.root {
+    display: flex;
+}
+
+.content-box {
+    padding: 3em;
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    gap:3em;
+    h2{
+        text-transform: uppercase;
+        color: $content-header-color;
+        display: flex;
+        gap: 3px;
+        align-items: center;
+    }
+
+    .topic{
+        h4{
+            margin: 0;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topic__list{
+            .topic__list__header{
+                font-size: larger;
+                color:#408699;
+            }
+        }
+        .skills{
+            display: flex;
+            gap:1em;
+            flex-direction: column;
+
+            .skills__row{
+                display: flex;
+                gap:1em;
+            }
+
+            .skills__name{
+                font-weight: bold;
+                min-width: 10em;
+                
+            }
+            .skills__status{
+                max-height: 1em;
+                min-height: 1em;
+                width: 100%;
+                background-color: #b1bcbe;
+            }
+            .skills__bar{
+                max-height: 1em;
+                min-height: 1em;
+                background-color: #408699;
+            }
+        }
+    }
+}
+
+.text-decor_blend{
+    color:$text-blend-color;
+}
+
+.text-decor_gray{
+    color: $text-gray-color
+}
+
+.sidepanel {
+    background: $sidepanel-color;
+    color: $sidepanel-font-color;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 0;
+
+    .profile {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: $sidepanel-profile-color;
+        padding: 1em 0;
+
+        .profile__image{
+            border-radius: 50%;
+            max-width: 100%;
+            height: 6em;
+        }
+
+        .profile__name{
+            font-size: 2em;
+            font-weight: bold;
+         }
+         
+         .profile__position{
+            font-size: 1em;
+            color: $profile-font-color;
+         }
+    }
+
+    .sidepanel__etc-info{
+        margin: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 3em
+    }
+
+    .list{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        .list__header{
+            font-weight: bold;
+        }
+
+        .list__el{
+            font-size: 0.8em;
+        }
+
+        .list__el_inline{
+            display: flex;
+            align-items: center;
+            gap:5px;
+        }
+    }
+
+    .edu-sublist{
+        @extend .list;
+        gap: 0;
+        .edu-sublist__header{
+            font-weight: bold;
+        }
+
+        .edu-sublist__el{
+            font-size: 0.8em;
+        }
+    }
+}
