@@ -10,8 +10,9 @@ html, body {
   padding: 1em;
   display: flex;
   flex-direction: column;
-  gap: 2em; }
+  gap: 3em; }
   .content .article .article-header {
+    margin-bottom: 1em;
     text-transform: uppercase;
     color: #337685;
     display: flex;

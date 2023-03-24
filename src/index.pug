@@ -35,16 +35,16 @@ html(lang="en")
       main.content
         section.article
           +articleHeader("person", "career profile")
-          p.article__body
-            p= articles.career_profile_body
+          .article__body
+            div= articles.career_profile_body
         section.article
           +articleHeader("work", "experiences")
-          p.article__body
+          .article__body
             each val in articles.experiences
               +generateExperience(val)
         section.article
           +articleHeader("apps", "projects")
-          p.article__body
+          .article__body
             .projects
               .projects__header
                 p= articles.projects.header
@@ -52,7 +52,7 @@ html(lang="en")
                 +generateProjects(val)
         section.article
           +articleHeader("rocket", "skill & proficiency")
-          p.article__body
+          .article__body
             .skills
               each val in articles.skills
                 +generateSkill(val)
