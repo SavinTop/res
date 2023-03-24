@@ -1,0 +1,91 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", href="./styles/style.css")
+  body
+    mixin articleHeader(icon, text)
+      .article-header
+        span.material-icons.article-header__icon= icon 
+        h2.article-header__text= text
+
+    mixin generateExperience(exp_object)
+      .experience
+        .experience__header
+          h4.experience__position= exp_object.position
+          span.experience__dates= exp_object.dates
+          span.experience__location= exp_object.location
+        .experience__body
+          p= exp_object.body
+
+    mixin generateProjects(proj_object)
+      .project
+        span.project__name= proj_object.name
+        span= " - "
+        span.project__description= proj_object.description
+
+    mixin generateSkill(skill_object)
+      .skill
+        .skill__name= skill_object.name
+        .skill__status
+          .skill__status_bar(style="width:"+skill_object.value+"%;")
+
+    .root
+      main.content
+        section.article
+          +articleHeader("person", "career profile")
+          p.article__body
+            p= articles.career_profile_body
+        section.article
+          +articleHeader("work", "experiences")
+          p.article__body
+            each val in articles.experiences
+              +generateExperience(val)
+        section.article
+          +articleHeader("apps", "projects")
+          p.article__body
+            .projects
+              .projects__header
+                p= articles.projects.header
+              each val in articles.projects.list
+                +generateProjects(val)
+        section.article
+          +articleHeader("rocket", "skill & proficiency")
+          p.article__body
+            .skills
+              each val in articles.skills
+                +generateSkill(val)
+      aside.side
+        .profile
+          img.profile__image(src=profile.profile_icon)
+          .profile__name= profile.name 
+          .profile__position= profile.position
+        .side__etc-info 
+          ul.list
+            each val in contacts
+              li.list__el
+                .contact-el
+                  span.material-icons= val.icon
+                  span= val.value
+          ul.list
+            span.list__header education
+            each val in education
+              li.list__el
+                .edu-el
+                  span.edu-el__header= val.edu
+                  span.edu-el__location= val.location
+                  span.edu-el__years= val.years
+          ul.list
+            span.list__header languages
+            each val in languages
+              li.list__el
+                .lang-el
+                  span.lang-el__lang= val.language
+                  span.lang-el__level (#{val.level})
+          ul.list
+            span.list__header interest
+            each val in interest
+              li.list__el
+                .interest-el
+                  span.interest-el__value= val.interest
