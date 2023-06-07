@@ -50,23 +50,23 @@ html(lang="en")
           .profile__name= profile.name 
           .profile__position= profile.position
         .side__etc-info 
+          span.list-header contact me
           ul.list
-            span.list__header contact me
             each val in contacts
               li.list__el
                 .contact-el
                   b= val.icon
                   a(href=val.link)= val.value
+          span.list-header education
           ul.list
-            span.list__header education
             each val in education
               li.list__el
                 .edu-el
                   span.edu-el__header= val.edu
                   span.edu-el__location= val.location
                   span.edu-el__years= val.years
+          span.list-header languages
           ul.list
-            span.list__header languages
             each val in languages
               li.list__el
                 .lang-el

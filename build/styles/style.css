@@ -86,12 +86,13 @@ html, body {
     margin: 0 2em;
     display: flex;
     flex-direction: column; }
+  .side .list-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 1rem; }
   .side .list {
     padding-left: 0;
     list-style: none; }
-    .side .list__header {
-      text-transform: uppercase;
-      font-weight: bold; }
     .side .list__el {
       margin-top: 0.2em; }
   .side .contact-el {
