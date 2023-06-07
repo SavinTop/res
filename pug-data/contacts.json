@@ -1,14 +1,12 @@
 [
     {
-        "icon": "mail",
-        "value": "savinov.vladislav@list.ru"
+        "icon": "Email:",
+        "value": "savindeath@gmail.com",
+		"link": "mailto:savindeath@gmail.com"
     },
     {
-        "icon": "phone",
-        "value": "+375(33)777-77-77"
-    },
-    {
-        "icon": "public",
-        "value": "savin.space"
+        "icon": "Telegram:",
+        "value": "@SavinSpace",
+		"link": "https://t.me/SavinSpace"
     }
 ]

@@ -1,57 +1,60 @@
 html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  justify-content: center; }
 
 .root {
-  display: flex; }
+  display: flex;
+  margin-block: 1.5rem;
+  width: 50rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
 
 .content {
   flex: 10 1;
-  padding: 1em;
+  padding: 1.5rem 1em;
   display: flex;
-  flex-direction: column;
-  gap: 3em; }
-  .content .article .article-header {
-    margin-bottom: 1em;
+  flex-direction: column; }
+  .content .article-header {
     text-transform: uppercase;
     color: #337685;
     display: flex;
     align-items: center; }
-    .content .article .article-header .article-header__text {
+    .content .article-header-header__text {
       margin: 0; }
-  .content .article .experience .experience__header {
+  .content .article .experience__header {
     display: grid;
     justify-content: space-between;
     align-items: baseline;
     grid-template-rows: auto 1fr;
     grid-template-areas: "position dates" "location none"; }
-    .content .article .experience .experience__header .experience__position {
-      margin: 0;
-      grid-area: position; }
-    .content .article .experience .experience__header .experience__dates {
-      color: gray;
-      grid-area: dates; }
-    .content .article .experience .experience__header .experience__location {
-      color: gray;
-      grid-area: location; }
+  .content .article .experience__position {
+    margin: 0;
+    grid-area: position; }
+  .content .article .experience__dates {
+    color: gray;
+    grid-area: dates; }
+  .content .article .experience__location {
+    color: gray;
+    grid-area: location; }
   .content .article .project {
     padding: 0.3em 0; }
-    .content .article .project .project__name {
+    .content .article .project__name {
       color: #408699;
       font-size: 1.1em; }
   .content .article .skills .skill {
     padding: 0.3em 0;
     display: flex;
     gap: 1em; }
-    .content .article .skills .skill .skill__name {
+    .content .article .skills .skill__name {
       font-weight: bold;
       min-width: 10em; }
-    .content .article .skills .skill .skill__status {
+    .content .article .skills .skill__status {
       max-height: 1em;
       min-height: 1em;
       width: 100%;
       background-color: #b1bcbe; }
-    .content .article .skills .skill .skill__status_bar {
+    .content .article .skills .skill__status_bar {
       max-height: 1em;
       min-height: 1em;
       background-color: #408699; }
@@ -70,43 +73,46 @@ html, body {
     justify-content: space-around;
     background: #408699;
     padding: 1em 0; }
-    .side .profile .profile__image {
-      border-radius: 50%;
+    .side .profile__image {
       max-width: 100%;
-      height: 6em; }
-    .side .profile .profile__name {
-      font-size: 2em;
+      height: 10rem; }
+    .side .profile__name {
+      font-size: 1.6em;
       font-weight: bold; }
-    .side .profile .profile__position {
+    .side .profile__position {
       font-size: 1em;
       color: #95C9D7; }
   .side .side__etc-info {
     margin: 0 2em;
     display: flex;
-    flex-direction: column;
-    gap: 1em; }
+    flex-direction: column; }
   .side .list {
     padding-left: 0;
     list-style: none; }
-    .side .list .list__header {
+    .side .list__header {
       text-transform: uppercase;
       font-weight: bold; }
-    .side .list .list__el {
-      margin-top: 1em; }
+    .side .list__el {
+      margin-top: 0.2em; }
   .side .contact-el {
-    display: flex;
-    align-items: center;
-    gap: 0.5em; }
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px; }
+    .side .contact-el a {
+      text-decoration: none;
+      color: white; }
   .side .edu-el {
     display: flex;
     flex-direction: column;
     gap: 0; }
-    .side .edu-el .edu-el__header {
+    .side .edu-el__header {
       font-weight: bold; }
-    .side .edu-el .edu-el__location, .side .edu-el .edu-el__years {
+    .side .edu-el__location, .side .edu-el__years {
       font-size: 0.8em;
       color: #A5E7FA; }
-  .side .lang-el .lang-el__level {
+  .side .lang-el__level {
     padding-left: 0.5em;
     color: #A5E7FA; }
 

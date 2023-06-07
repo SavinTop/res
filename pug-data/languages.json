@@ -1,14 +1,10 @@
 [
     {
         "language": "English",
-        "level": "Native"
+        "level": "B1"
     },
     {
-        "language": "French",
-        "level": "Professional"
-    },
-    {
-        "language": "Spanish",
-        "level": "Professional"
+        "language": "Russian",
+        "level": "C2"
     }
 ]
