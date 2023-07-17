@@ -7,7 +7,6 @@
    <style>
       html {
          scroll-behavior: smooth;
-		 scroll-snap-type: y proximity;
       }
 
       .hours {
@@ -27,9 +26,6 @@
       }
 
       .flash-section {
-		 scroll-snap-align: start;
-		 scroll-snap-stop: always;
-	  
          box-sizing: content-box;
          min-width: 400px;
          background: #393E46;
@@ -39,19 +35,41 @@
          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       }
 
-      h2 {
+      .flash-header {
          color: #00C5CF;
       }
 
-      h3 {
+      .flash-subheader {
          color: #52CACF;
       }
 
-      ul {
+      .film-list {
          font-weight: bold;
       }
 
-      @media (orientation: portrait) {
+      
+	  
+	  .film-el {
+	background-color:#000000;
+	border-radius:12px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	padding:10px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.film-el:hover {
+	background-color:#00C5CF;
+}
+.film-el:active {
+	position:relative;
+	top:1px;
+}
+
+@media (orientation: portrait) {
          body {
             font-size: 5vw;
          }
@@ -61,16 +79,18 @@
             min-height: 100vh;
          }
       }
+
    </style>
 </head>
 
 <body>
+
    <div class="page">
       <div class="flash-section">
-         <h2>Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
-         <h3>Фильмы</h3>
-         <ul>
-            <li>Чудо на Гудзоне</li>
+         <h2 class="flash-header">Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
+         <h3 class="flash-subheader">Фильмы</h3>
+         <ul class="film-list">
+            <li><a href="#" class="film-el">Последнее королевство: Семь королей должны умереть</a></li>
             <li>Как живой</li>
             <li>Чудо в океане</li>
             <li>О чем говорят мужчины</li>
@@ -81,8 +101,8 @@
             <li>Дело Ричарда Джуэлла</li>
             <li>Дом Гуччи</li>
          </ul>
-         <h3>Сериалы</h3>
-         <ul>
+         <h3 class="flash-subheader">Сериалы</h3>
+         <ul class="film-list">
             <li>Против всех</li>
             <li>И снова, здравствуйте (2 сезона)</li>
             <li>Бег улиток</li>
@@ -92,9 +112,9 @@
          </ul>
       </div>
       <div class="flash-section">
-         <h2>Флешка 2<span class="hours">(~89,5 ч)</span></h2>
-         <h3>Фильмы</h3>
-         <ul>
+         <h2 class="flash-header">Флешка 2<span class="hours">(~89,5 ч)</span></h2>
+         <h3 class="flash-subheader">Фильмы</h3>
+         <ul class="film-list">
             <li>Звериная ярость</li>
             <li>Телохранитель жены киллера</li>
             <li>Бессмертные</li>
@@ -112,8 +132,8 @@
             <li>Джон Уик 4</li>
             <li>Обещание</li>
          </ul>
-         <h3>Сериалы</h3>
-         <ul>
+         <h3 class="flash-subheader">Сериалы</h3>
+         <ul class="film-list">
             <li>Кошка</li>
             <li>Никто не узнает</li>
             <li>Алиби</li>
@@ -124,9 +144,9 @@
          </ul>
       </div>
       <div class="flash-section">
-         <h2>Флешка 3 <span class="hours">(~20,6 ч)</span></h2>
-         <h3>Фильмы</h3>
-         <ul>
+         <h2 class="flash-header">Флешка 3 <span class="hours">(~20,6 ч)</span></h2>
+         <h3 class="flash-subheader">Фильмы</h3>
+         <ul class="film-list">
             <li>Не стучи</li>
             <li>Убийство в Париже</li>
             <li>Инфиесто</li>
@@ -135,8 +155,8 @@
             <li>Круиз по джунглям — Тайна Вальверде</li>
             <li>Лютер Павшее солнце</li>
          </ul>
-         <h3>Сериалы</h3>
-         <ul>
+         <h3 class="flash-subheader">Сериалы</h3>
+         <ul class="film-list">
             <li>Призвание</li>
          </ul>
       </div>
