@@ -9,6 +9,9 @@
          scroll-behavior: smooth;
       }
 
+	  html:has(dialog[open]:modal) {
+  overflow: hidden;
+}
       .hours {
          color: #7EB3B5;
       }
@@ -21,7 +24,8 @@
       .page {
          display: flex;
          flex-wrap: wrap;
-		 gap: 1em;
+		 flex-direction: column;
+		 align-items: center;
       }
 
       .flash-section {
@@ -70,6 +74,12 @@
          }
       }
 	  
+	  @media (orientation: landscape) {
+         .flash-section{
+			width: 33vw;
+		 }
+      }
+	  
 	  .film-el {
 	  display: block;
 	background-color:rgba(0,0,0,0.2);
@@ -85,11 +95,94 @@
 	position:relative;
 	top:1px;
 }
-
+   </style>
+   <!--dialog-->
+   <style>
+   .film-info{
+	background: #393E46;
+         color: white;
+		 height: 100vh;
+   }
+	.film-info__header{
+		 text-align: center;
+		 width:100%;
+	     background: rgba(0, 0, 0, 0.3);
+         color: #52cacf;
+		 font-size: 150%;
+		 font-weight: bold;
+	}
+   
+	.film-info__body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block: 2em;
+		gap: 0.5em;
+	}
+	
+	.film-info__el{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	.film-info__category{
+		color: #52CACF;
+		font-weight: bold;
+	}
+	
+	#film-info__description .film-info__value{
+		text-align: left;
+	}
+	
+	.film-info__backbtn{
+		display: block;
+	     background-color:rgba(0,0,0,0.2);
+		 color: #52cacf;
+		 font-size: 150%;
+		 font-weight: bold;
+		 border-radius:12px;
+	cursor:pointer;
+	padding:10px 25px;
+	text-decoration:none;
+	text-align: center;
+	}
    </style>
 </head>
 
 <body>
+	<dialog class="film-info">
+		<div class="film-info__header" id="film-info__header">Чудо на гудзоне</div>
+		<div class="film-info__body">
+			<span class="film-info__el" id="film-info__year">
+				<span class="film-info__category">Год</span>
+				<span class="film-info__value">2016</span>
+			</span>
+			<span class="film-info__el" id="film-info__country">
+				<span class="film-info__category">Страна</span>
+				<span class="film-info__value">США</span>
+			</span>
+			<span class="film-info__el" id="film-info__genre">
+				<span class="film-info__category">Жанр</span>
+				<span class="film-info__value">драма, биография</span>
+			</span>
+			<span class="film-info__el" id="film-info__duration">
+				<span class="film-info__category">Продолжительность</span>
+				<span class="film-info__value">96 мин</span>
+			</span>
+			<span class="film-info__el" id="film-info__count">
+				<span class="film-info__category">Кол-во серий</span>
+				<span class="film-info__value">1</span>
+			</span>
+			<span class="film-info__el" id="film-info__description">
+				<span class="film-info__category">Описание</span>
+				<span class="film-info__value">Произошедшее 15 января 2009 года назовут «Чудом на Гудзоне». В тот день капитан рейса 1549 Чесли Салленбергер совершил аварийную посадку самолета Airbus A320 на холодные воды реки Гудзон в Нью-Йорке. При этом никто из находившихся на борту 155 человек не пострадал. Но, несмотря на все почести со стороны общественности и СМИ, было начато расследование, которое угрожало профессиональной репутации и многолетней карьере капитана Салли.</span>
+			</span>
+			
+		</div>
+		<a class="film-info__backbtn" onclick="closeInfo()">Назад</a>
+	</dialog>
+
    <div class="page">
    <div class="flash-section">
 		 <div class="flash-header">
@@ -99,7 +192,7 @@
 		 <div class="flash-body">
          <h3 class="flash-subheader">Фильмы</h3>
          <div class="film-list">
-            <a class="film-el">Чудо на Гудзоне</a>
+            <a class="film-el" onclick="openInfo()">Чудо на Гудзоне</a>
             <a class="film-el">Как живой</a>
             <a class="film-el">Чудо в океане</a>
             <a class="film-el">О чем говорят мужчины</a>
@@ -182,6 +275,57 @@
 		 </div>
       </div>
    </div>
+   <script>
+   const data={
+	flash_1:{
+		films:{
+			"Miracle on the Hudson": {
+				header: "Чудо на Гудзоне",
+				year: "2016",
+				country: "США",
+				genre: "драма, биография",
+				duration: 96,
+				description: "Произошедшее 15 января 2009 года назовут «Чудом на Гудзоне». В тот день капитан рейса 1549 Чесли Салленбергер совершил аварийную посадку самолета Airbus A320 на холодные воды реки Гудзон в Нью-Йорке. При этом никто из находившихся на борту 155 человек не пострадал. Но, несмотря на все почести со стороны общественности и СМИ, было начато расследование, которое угрожало профессиональной репутации и многолетней карьере капитана Салли."
+			}
+		},
+		series:{
+		
+		}
+	}
+	
+   };
+   
+   const info_dialog = document.querySelector("dialog");
+   const info_dialog_elements = {
+	header: document.getElementById("film-info__header"),
+	year: document.getElementById("film-info__year"),
+	country: document.getElementById("film-info__country"),
+	genre: document.getElementById("film-info__genre"),
+	duration: document.getElementById("film-info__duration"),
+	count: document.getElementById("film-info__count"),
+	description: document.getElementById("film-info__description"),
+   }
+   
+   const info_dialog_els_values = {}
+   
+   for (const [key, value] of Object.entries(info_dialog_elements)) {
+		info_dialog_els_values[key] = value.querySelector('.film-info__value');
+	}
+	
+	info_dialog_els_values.header = info_dialog_elements.header;
+	
+	console.log(info_dialog_els_values)
+   
+   info_dialog.showModal();
+   
+   function closeInfo(){
+	info_dialog.close();
+   }
+   
+   function openInfo(flash, type, name){
+	info_dialog.showModal();
+   }
+   </script>
 </body>
 
 </html>
