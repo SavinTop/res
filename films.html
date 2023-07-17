@@ -1,135 +1,146 @@
 ﻿<!doctype html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <style>
-			html {
-    scroll-behavior: smooth;
-}
-	  
-      	 .hours{
-      	 	color: #7EB3B5;
-      	 }
-      
-         body{
-         background:#222831;
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <style>
+      html {
+         scroll-behavior: smooth;
+		 scroll-snap-type: y mandatory;
+      }
+
+      .hours {
+         color: #7EB3B5;
+      }
+
+      body {
+         background: #222831;
          font-family: Arial, Helvetica, sans-serif;
-         }
-         .page{
+      }
+
+      .page {
          margin-inline: auto;
          width: fit-content;
          display: flex;
          flex-wrap: wrap;
-         }
-         .flash-section{
+      }
+
+      .flash-section {
+		 scroll-snap-align: start;
+		 scroll-snap-stop: always;
+	  
          box-sizing: content-box;
          min-width: 400px;
          background: #393E46;
          color: white;
          margin: 10px;
          padding: 1em;
-         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-         }
-         h2{
-         color:#00C5CF;
-         }
-         
-         h3{
-         color:#52CACF;
-         }
-         
-         ul{
-         	font-weight: bold;
-         }
-         
-         @media (orientation: portrait) {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+         color: #00C5CF;
+      }
+
+      h3 {
+         color: #52CACF;
+      }
+
+      ul {
+         font-weight: bold;
+      }
+
+      @media (orientation: portrait) {
          body {
-         font-size: 5vw;
+            font-size: 5vw;
          }
-         .flash-section{
-         width: 100%;
-		 min-height: 100vh;
+
+         .flash-section {
+            width: 100%;
+            min-height: 100vh;
          }
-         }
-      </style>
-   </head>
-   <body>
-      <div class="page">
-         <div class="flash-section">
-            <h2>Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
-            <h3>Фильмы</h3>
-            <ul>
-               <li>Чудо на Гудзоне</li>
-               <li>Как живой</li>
-               <li>Чудо в океане</li>
-               <li>О чем говорят мужчины</li>
-               <li>Охотник за разумом схватка</li>
-               <li>Голодный кролик атакует</li>
-               <li>Между нами горы</li>
-               <li>Мизантроп</li>
-               <li>Дело Ричарда Джуэлла</li>
-               <li>Дом Гуччи</li>
-            </ul>
-            <h3>Сериалы</h3>
-            <ul>
-               <li>Против всех</li>
-               <li>И снова, здравствуйте (2 сезона)</li>
-               <li>Бег улиток</li>
-               <li>Зверобой</li>
-               <li>Порт</li>
-               <li>Киллер</li>
-            </ul>
-         </div>
-		 <div class="flash-section">
-            <h2>Флешка 2<span class="hours">(~89,5 ч)</span></h2>
-            <h3>Фильмы</h3>
-            <ul>
-			   <li>Звериная ярость</li>
-<li>Телохранитель жены киллера</li>
-<li>Бессмертные</li>
-<li>Бессмертный</li>
-<li>Телохранитель киллера</li>
-<li>Беглец</li>
-               <li>Беспринципные в деревне </li>
-               <li>Крушение</li>
-               <li>Операция «Фортуна»: Искусство побеждать</li>
-               <li>Последнее королевство: Семь королей должны умереть</li>
-               <li>Флешбэк</li>
-               <li>Аферисты</li>
-               <li>Переводчик</li>
-               <li>Кунг-фу жеребец</li>
-               <li>Джон Уик 4</li>
-			   <li>Обещание</li>
-            </ul>
-            <h3>Сериалы</h3>
-            <ul>
-               <li>Кошка</li>
-               <li>Никто не узнает</li>
-               <li>Алиби</li>
-               <li>Пять дней после катастрофы</li>
-               <li>Борщи</li>
-               <li>Истории большой страны</li>
-               <li>Фишер</li>
-            </ul>
-         </div>
-		 <div class="flash-section">
-            <h2>Флешка 3 <span class="hours">(~20,6 ч)</span></h2>
-            <h3>Фильмы</h3>
-            <ul>
-               <li>Не стучи</li>
-<li>Убийство в Париже</li>
-<li>Инфиесто</li>
-<li>Борат 2</li>
-<li>Джентльмены</li>
-<li>Круиз по джунглям — Тайна Вальверде</li>
-<li>Лютер Павшее солнце</li>
-            </ul>
-            <h3>Сериалы</h3>
-            <ul>
-               <li>Призвание</li>
-            </ul>
-         </div>
+      }
+   </style>
+</head>
+
+<body>
+   <div class="page">
+      <div class="flash-section">
+         <h2>Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
+         <h3>Фильмы</h3>
+         <ul>
+            <li>Чудо на Гудзоне</li>
+            <li>Как живой</li>
+            <li>Чудо в океане</li>
+            <li>О чем говорят мужчины</li>
+            <li>Охотник за разумом схватка</li>
+            <li>Голодный кролик атакует</li>
+            <li>Между нами горы</li>
+            <li>Мизантроп</li>
+            <li>Дело Ричарда Джуэлла</li>
+            <li>Дом Гуччи</li>
+         </ul>
+         <h3>Сериалы</h3>
+         <ul>
+            <li>Против всех</li>
+            <li>И снова, здравствуйте (2 сезона)</li>
+            <li>Бег улиток</li>
+            <li>Зверобой</li>
+            <li>Порт</li>
+            <li>Киллер</li>
+         </ul>
       </div>
-   </body>
+      <div class="flash-section">
+         <h2>Флешка 2<span class="hours">(~89,5 ч)</span></h2>
+         <h3>Фильмы</h3>
+         <ul>
+            <li>Звериная ярость</li>
+            <li>Телохранитель жены киллера</li>
+            <li>Бессмертные</li>
+            <li>Бессмертный</li>
+            <li>Телохранитель киллера</li>
+            <li>Беглец</li>
+            <li>Беспринципные в деревне </li>
+            <li>Крушение</li>
+            <li>Операция «Фортуна»: Искусство побеждать</li>
+            <li>Последнее королевство: Семь королей должны умереть</li>
+            <li>Флешбэк</li>
+            <li>Аферисты</li>
+            <li>Переводчик</li>
+            <li>Кунг-фу жеребец</li>
+            <li>Джон Уик 4</li>
+            <li>Обещание</li>
+         </ul>
+         <h3>Сериалы</h3>
+         <ul>
+            <li>Кошка</li>
+            <li>Никто не узнает</li>
+            <li>Алиби</li>
+            <li>Пять дней после катастрофы</li>
+            <li>Борщи</li>
+            <li>Истории большой страны</li>
+            <li>Фишер</li>
+         </ul>
+      </div>
+      <div class="flash-section">
+         <h2>Флешка 3 <span class="hours">(~20,6 ч)</span></h2>
+         <h3>Фильмы</h3>
+         <ul>
+            <li>Не стучи</li>
+            <li>Убийство в Париже</li>
+            <li>Инфиесто</li>
+            <li>Борат 2</li>
+            <li>Джентльмены</li>
+            <li>Круиз по джунглям — Тайна Вальверде</li>
+            <li>Лютер Павшее солнце</li>
+         </ul>
+         <h3>Сериалы</h3>
+         <ul>
+            <li>Призвание</li>
+         </ul>
+      </div>
+   </div>
+</body>
+
 </html>
