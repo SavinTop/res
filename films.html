@@ -26,6 +26,9 @@
       }
 
       .flash-section {
+	     display: flex;
+		 flex-direction: column;
+		 align-items: center;
          box-sizing: content-box;
          min-width: 400px;
          background: #393E46;
@@ -44,32 +47,12 @@
       }
 
       .film-list {
-         font-weight: bold;
+		 display: flex;
+		 flex-direction: column;
+		 gap: 10px;
       }
 
-      
-	  
-	  .film-el {
-	background-color:#000000;
-	border-radius:12px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-weight:bold;
-	padding:10px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.film-el:hover {
-	background-color:#00C5CF;
-}
-.film-el:active {
-	position:relative;
-	top:1px;
-}
-
-@media (orientation: portrait) {
+      @media (orientation: portrait) {
          body {
             font-size: 5vw;
          }
@@ -79,18 +62,59 @@
             min-height: 100vh;
          }
       }
+	  
+	  .film-el {
+	  display: block;
+	background-color:#000000;
+	border-radius:12px;
+	cursor:pointer;
+	color:#ffffff;
+	padding:10px 25px;
+	text-decoration:none;
+	text-align: center;
+}
+
+.film-el:active {
+	position:relative;
+	top:1px;
+}
 
    </style>
 </head>
 
 <body>
-
    <div class="page">
+   <div class="flash-section">
+         <h2 class="flash-header">Флешка 1 </h2>
+		 <span class="hours">(~69,5 ч)</span>
+         <h3 class="flash-subheader">Фильмы</h3>
+         <div class="film-list">
+            <a class="film-el">Чудо на Гудзоне</a>
+            <a class="film-el">Как живой</a>
+            <a class="film-el">Чудо в океане</a>
+            <a class="film-el">О чем говорят мужчины</a>
+            <a class="film-el">Охотник за разумом схватка</a>
+            <a class="film-el">Голодный кролик атакует</a>
+            <a class="film-el">Между нами горы</a>
+            <a class="film-el">Мизантроп</a>
+            <a class="film-el">Дело Ричарда Джуэлла</a>
+            <a class="film-el">Дом Гуччи</a>
+         </div>
+		 <h3 class="flash-subheader">Сериалы</h3>
+         <div class="film-list">
+            <a class="film-el">Против всех</a>
+            <a class="film-el">И снова, здравствуйте (2 сезона)</a>
+            <a class="film-el">Бег улиток</a>
+            <a class="film-el">Зверобой</a>
+            <a class="film-el">Порт</a>
+            <a class="film-el">Киллер</a>
+         </div>
+      </div>
       <div class="flash-section">
          <h2 class="flash-header">Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
          <h3 class="flash-subheader">Фильмы</h3>
          <ul class="film-list">
-            <li><a href="#" class="film-el">Последнее королевство: Семь королей должны умереть</a></li>
+            <li>Чудо на Гудзоне</li>
             <li>Как живой</li>
             <li>Чудо в океане</li>
             <li>О чем говорят мужчины</li>
