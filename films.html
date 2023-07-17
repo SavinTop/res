@@ -19,28 +19,34 @@
       }
 
       .page {
-         margin-inline: auto;
-         width: fit-content;
          display: flex;
          flex-wrap: wrap;
+		 gap: 1em;
       }
 
       .flash-section {
-	     display: flex;
-		 flex-direction: column;
-		 align-items: center;
          box-sizing: content-box;
          min-width: 400px;
          background: #393E46;
          color: white;
-         margin: 10px;
-         padding: 1em;
-         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
+      }	  
 
       .flash-header {
-         color: #00C5CF;
+	     display: flex;
+		 justify-content: space-between;
+	     width:100%;
+	     background: rgba(0, 0, 0, 0.3);
+         color: #52cacf;
+		 font-size: 150%;
+		 font-weight: bold;
       }
+
+	  .flash-body{
+	    display: flex;
+		 flex-direction: column;
+		 align-items: center;
+		padding: 1em;
+	  }
 
       .flash-subheader {
          color: #52CACF;
@@ -50,6 +56,7 @@
 		 display: flex;
 		 flex-direction: column;
 		 gap: 10px;
+		 width:100%;
       }
 
       @media (orientation: portrait) {
@@ -85,8 +92,11 @@
 <body>
    <div class="page">
    <div class="flash-section">
-         <h2 class="flash-header">Флешка 1 </h2>
-		 <span class="hours">(~69,5 ч)</span>
+		 <div class="flash-header">
+			<span class="flash-header__name">Флешка 1</span>
+			<span class="flash-header__duration">~69,5 ч</span>
+		 </div>
+		 <div class="flash-body">
          <h3 class="flash-subheader">Фильмы</h3>
          <div class="film-list">
             <a class="film-el">Чудо на Гудзоне</a>
@@ -109,80 +119,67 @@
             <a class="film-el">Порт</a>
             <a class="film-el">Киллер</a>
          </div>
+		 </div>
+      </div>
+ 
+      <div class="flash-section">
+			<div class="flash-header">
+			<span class="flash-header__name">Флешка 2</span>
+			<span class="flash-header__duration">~89,5 ч</span>
+		 </div>
+		 <div class="flash-body">
+         <h3 class="flash-subheader">Фильмы</h3>
+         <div class="film-list">
+            <a class="film-el">Звериная ярость</a>
+            <a class="film-el">Телохранитель жены киллера</a>
+            <a class="film-el">Бессмертные</a>
+            <a class="film-el">Бессмертный</a>
+            <a class="film-el">Телохранитель киллера</a>
+            <a class="film-el">Беглец</a>
+            <a class="film-el">Беспринципные в деревне </a>
+            <a class="film-el">Крушение</a>
+            <a class="film-el">Операция «Фортуна»: Искусство побеждать</a>
+            <a class="film-el">Последнее королевство: Семь королей должны умереть</a>
+            <a class="film-el">Флешбэк</a>
+            <a class="film-el">Аферисты</a>
+            <a class="film-el">Переводчик</a>
+            <a class="film-el">Кунг-фу жеребец</a>
+            <a class="film-el">Джон Уик 4</a>
+            <a class="film-el">Обещание</a>
+         </div>
+         <h3 class="flash-subheader">Сериалы</h3>
+         <div class="film-list">
+            <a class="film-el">Кошка</a>
+            <a class="film-el">Никто не узнает</a>
+            <a class="film-el">Алиби</a>
+            <a class="film-el">Пять дней после катастрофы</a>
+            <a class="film-el">Борщи</a>
+            <a class="film-el">Истории большой страны</a>
+            <a class="film-el">Фишер</a>
+         </div>
+		 </div>
       </div>
       <div class="flash-section">
-         <h2 class="flash-header">Флешка 1 <span class="hours">(~69,5 ч)</span></h2>
+         <div class="flash-header">
+			<span class="flash-header__name">Флешка 3</span>
+			<span class="flash-header__duration">~20,6 ч</span>
+		 </div>
+		 <div class="flash-body">
          <h3 class="flash-subheader">Фильмы</h3>
-         <ul class="film-list">
-            <li>Чудо на Гудзоне</li>
-            <li>Как живой</li>
-            <li>Чудо в океане</li>
-            <li>О чем говорят мужчины</li>
-            <li>Охотник за разумом схватка</li>
-            <li>Голодный кролик атакует</li>
-            <li>Между нами горы</li>
-            <li>Мизантроп</li>
-            <li>Дело Ричарда Джуэлла</li>
-            <li>Дом Гуччи</li>
-         </ul>
+         <div class="film-list">
+            <a class="film-el">Не стучи</a>
+            <a class="film-el">Убийство в Париже</a>
+            <a class="film-el">Инфиесто</a>
+            <a class="film-el">Борат 2</a>
+            <a class="film-el">Джентльмены</a>
+            <a class="film-el">Круиз по джунглям — Тайна Вальверде</a>
+            <a class="film-el">Лютер Павшее солнце</a>
+         </div>
          <h3 class="flash-subheader">Сериалы</h3>
-         <ul class="film-list">
-            <li>Против всех</li>
-            <li>И снова, здравствуйте (2 сезона)</li>
-            <li>Бег улиток</li>
-            <li>Зверобой</li>
-            <li>Порт</li>
-            <li>Киллер</li>
-         </ul>
-      </div>
-      <div class="flash-section">
-         <h2 class="flash-header">Флешка 2<span class="hours">(~89,5 ч)</span></h2>
-         <h3 class="flash-subheader">Фильмы</h3>
-         <ul class="film-list">
-            <li>Звериная ярость</li>
-            <li>Телохранитель жены киллера</li>
-            <li>Бессмертные</li>
-            <li>Бессмертный</li>
-            <li>Телохранитель киллера</li>
-            <li>Беглец</li>
-            <li>Беспринципные в деревне </li>
-            <li>Крушение</li>
-            <li>Операция «Фортуна»: Искусство побеждать</li>
-            <li>Последнее королевство: Семь королей должны умереть</li>
-            <li>Флешбэк</li>
-            <li>Аферисты</li>
-            <li>Переводчик</li>
-            <li>Кунг-фу жеребец</li>
-            <li>Джон Уик 4</li>
-            <li>Обещание</li>
-         </ul>
-         <h3 class="flash-subheader">Сериалы</h3>
-         <ul class="film-list">
-            <li>Кошка</li>
-            <li>Никто не узнает</li>
-            <li>Алиби</li>
-            <li>Пять дней после катастрофы</li>
-            <li>Борщи</li>
-            <li>Истории большой страны</li>
-            <li>Фишер</li>
-         </ul>
-      </div>
-      <div class="flash-section">
-         <h2 class="flash-header">Флешка 3 <span class="hours">(~20,6 ч)</span></h2>
-         <h3 class="flash-subheader">Фильмы</h3>
-         <ul class="film-list">
-            <li>Не стучи</li>
-            <li>Убийство в Париже</li>
-            <li>Инфиесто</li>
-            <li>Борат 2</li>
-            <li>Джентльмены</li>
-            <li>Круиз по джунглям — Тайна Вальверде</li>
-            <li>Лютер Павшее солнце</li>
-         </ul>
-         <h3 class="flash-subheader">Сериалы</h3>
-         <ul class="film-list">
-            <li>Призвание</li>
-         </ul>
+         <div class="film-list">
+            <a class="film-el">Призвание</a>
+         </div>
+		 </div>
       </div>
    </div>
 </body>
