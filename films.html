@@ -819,7 +819,7 @@ const data = {
             duration: (dur) => {
                 const h = Math.floor(dur / 60)
                 const m = dur % 60;
-                return h ? (h + "ч " + m + " м") : m + " м"
+                return h ? (h + "ч " + m + "м") : m + "м"
             }
         }
 
@@ -865,22 +865,26 @@ const data = {
         renderSections(document.querySelector(".sections-root"));
 
         function generateSection(flash) {
-
+			
+			let overallDuration = 0;
+			
             const films = flash.films.map(el => {
                 globalFilmPointers.push(el);
+				overallDuration+=+el.duration;
                 return `<a class="film-el" onclick="openInfo(${globalFilmPointers.length - 1})">${el.header}</a>`;
             }).join('')
 
             const series = flash.series.map(el => {
                 globalFilmPointers.push(el);
+				overallDuration+=el.duration * el.count;
                 return `<a class="film-el" onclick="openInfo(${globalFilmPointers.length - 1})">${el.header}</a>`;
             }).join('')
-
+			
             const flashSection = document.createElement('div');
             flashSection.classList.add('flash-section');
             flashSection.innerHTML = `<div class="flash-header">
             <span class="flash-header__name">${flash.name}</span>
-            <span class="flash-header__duration">~${flash.duration} ч</span>
+            <span class="flash-header__duration">${pipes.duration(overallDuration)}</span>
          </div>
          <div class="flash-body">
             <h3 class="flash-subheader">Фильмы</h3>
