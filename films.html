@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <style>
         html {
             scroll-behavior: smooth;
@@ -917,6 +919,15 @@ const data = {
 
 		renderSections(document.querySelector(".sections-root"));
         header_image.classList.toggle("loading-pulse");
+
+if(history.scrollRestoration){
+	history.scrollRestoration = 'manual';
+}else{
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+}
+
     </script>
 </body>
 
