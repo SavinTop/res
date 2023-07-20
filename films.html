@@ -28,6 +28,8 @@
             flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
+			justify-content:center;
+			min-height: 100vh;
         }
 
         .flash-section {
@@ -178,8 +180,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+			justify-content:center;
             padding: 1em;
+			height: 30vh;
+			transition: height 1s ease-out;
         }
+		
+		.header:has(.loading-pulse){
+			height: 100vh;
+		}
 
         .header-image {
             height: 10em;
@@ -190,13 +199,6 @@
             font-size: 150%;
             font-weight: bold;
         }
-		
-		.page:has(.loading-pulse){
-			display: flex;
-			align-items: center;
-			justify-content:center;
-			min-height: 100vh;
-		}
 		
 		.loading-pulse {
 		animation: pulse 1s linear infinite;
